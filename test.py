@@ -1,3 +1,6 @@
-import langchain
+from dotenv import load_dotenv
+import os
 
-print(langchain.__version__)
+load_dotenv()
+
+print("TOKEN =", os.getenv("HUGGINGFACEHUB_ACCESS_TOKEN"))

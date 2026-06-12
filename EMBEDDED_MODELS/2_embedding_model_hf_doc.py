@@ -9,6 +9,12 @@ embedding_model = HuggingFaceEmbeddings(
     model_name= 'sentence-transformers/all-MiniLM-L6-v2'
 )
 
-vector = embedding_model.embed_query("Delhi is the capital of India")
+document = [
+    "delhi is the capital of India ",
+    "Paris is the capital of France",
+    "New York is the capital of America"
+]
+
+vector = embedding_model.embed_documents(document)
 
 print(str(vector))

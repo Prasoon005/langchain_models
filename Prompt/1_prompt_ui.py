@@ -16,3 +16,5 @@ user_input = st.text_input("Enter Your Prompt")
 if(st.button('Summarize')):
     result  =  model.invoke(user_input)
     st.write(result.content)
+
+# this is static prompts example 

@@ -15,3 +15,4 @@ messages = [SystemMessage(content="You are helpful ai assistant"),
 result  =  model.invoke(messages)
 messages.append(AIMessage(content=result.content))
 print(messages)
+

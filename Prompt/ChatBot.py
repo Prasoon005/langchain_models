@@ -1,4 +1,5 @@
 from langchain_openai import ChatOpenAI
+from langchain_core.messages import SystemMessage ,HumanMessage,AIMessage
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -11,15 +12,15 @@ model = ChatOpenAI(
     max_completion_tokens=1000
 )
 
-Chat_history = []
+Chat_history = [SystemMessage(content='You are a helpful Ai assistant ')]
 
 
 while(True):
     user_input  =  input("User : ")
-    Chat_history.append(user_input)
+    Chat_history.append(HumanMessage(content=user_input))
     if(user_input=="exit"):
         break
     result  = model.invoke(user_input)
-    Chat_history.append(result.content)
+    Chat_history.append(AIMessage(content=result.content))
     print("Ai : " , result.content)
 print(Chat_history)

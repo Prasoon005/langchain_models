@@ -18,7 +18,7 @@ template = PromptTemplate(
   partial_variables={"format_description":parser.get_format_instructions()} 
 )
 
-chain = template | model | parser 
+chain = template | model | parser
 
 result  = chain.invoke({})
 

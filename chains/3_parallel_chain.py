@@ -68,4 +68,8 @@ result  = chain.invoke({'text':text})
 
 print(result)
 
+# to Review the graph 
+
+chain.get_graph().print_ascii()
+
 

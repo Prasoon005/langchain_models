@@ -35,5 +35,5 @@ chain  = prompt | Chat_model | parser
 
 result  = chain.invoke({'place':'indian'})
 
-print(type(result))
+print(result)  # pydantic_object 
 

@@ -4,6 +4,11 @@ import os
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnableSequence , RunnableParallel 
+from pathlib import Path
+
+env_path = Path(__file__).resolve().parent.parent /".env"  
+
+load_dotenv(env_path)
 
 model  =  ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
